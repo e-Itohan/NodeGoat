@@ -31,7 +31,7 @@ jobs:
           output: 'trivy-results.sarif'
       
       - name: Upload to GitHub Security
-        uses: github/codeql-action/upload-sarif@66b84a5e60f4c4e297b70a7e8b6e4a6d4f5c3b2a
+        uses: github/codeql-action/upload-sarif@v4
         if: always()
         with:
           sarif_file: 'trivy-results.sarif'
