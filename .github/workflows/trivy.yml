@@ -11,10 +11,10 @@ jobs:
       actions: read
       contents: read
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0
       
       - name: Run Trivy (console output)
-        uses: aquasecurity/trivy-action@0.36.0
+        uses: aquasecurity/trivy-action@df678dbccf677bc6937338d569ba0da18964a8cc
         with:
           scan-type: 'fs'
           format: 'table'
@@ -22,7 +22,7 @@ jobs:
           exit-code: '0'
       
       - name: Run Trivy (sarif)
-        uses: aquasecurity/trivy-action@0.36.0
+        uses: aquasecurity/trivy-action@df678dbccf677bc6937338d569ba0da18964a8cc
         with:
           scan-type: 'fs'
           format: 'sarif'
@@ -31,7 +31,7 @@ jobs:
           output: 'trivy-results.sarif'
       
       - name: Upload to GitHub Security
-        uses: github/codeql-action/upload-sarif@v4
+        uses: github/codeql-action/upload-sarif@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0
         if: always()
         with:
           sarif_file: 'trivy-results.sarif'
